@@ -83,6 +83,14 @@ contract Roshambo is ERC721 {
 
   }
 
+  function numTokens() public view returns (uint256 count) {
+    return _tokenIds.current();
+  }
+
+  function tokenID() public view returns (uint256) {
+    return nftHolders[msg.sender];
+  }
+
   function tokenURI(uint256 _tokenId) public view override returns (string memory) {
     CharacterAttributes memory charAttributes = nftHolderAttributes[_tokenId];
 
